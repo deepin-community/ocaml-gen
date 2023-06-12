@@ -1,0 +1,2 @@
+Test-Command: ocamlfind query gen
+Depends: ocaml-nox, ocaml-findlib, @

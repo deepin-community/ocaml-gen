@@ -1,0 +1,4 @@
+@OCamlStdlibDir@/gen/META
+@OCamlStdlibDir@/gen/opam
+@OCamlStdlibDir@/gen/gen.cma
+DYN: @OCamlStdlibDir@/gen/gen.cmxs

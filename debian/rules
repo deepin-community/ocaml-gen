@@ -1,4 +1,25 @@
 #!/usr/bin/make -f
 
+DESTDIR=$(CURDIR)/debian/tmp
+include /usr/share/ocaml/ocamlvars.mk
+export OCAMLFIND_DESTDIR=$(DESTDIR)$(OCAML_STDLIB_DIR)
+
 %:
-	dh $@
+	dh $@ --with ocaml
+
+override_dh_auto_configure:
+
+override_dh_auto_build:
+	dune build @install -p gen --verbose
+
+override_dh_auto_install:
+	dune install --destdir=$(DESTDIR) --prefix=/usr --libdir=..$(OCAML_STDLIB_DIR) --verbose
+
+# disable test for armhf
+# https://github.com/ocaml/dune/issues/2527
+override_dh_auto_test:
+ifneq (armhf,$(DEB_TARGET_ARCH))
+	dune build @runtest -p gen --no-buffer --force --verbose
+endif
+
+override_dh_dwz:

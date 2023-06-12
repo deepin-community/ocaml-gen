@@ -1,0 +1,9 @@
+@OCamlStdlibDir@/gen/dune-package
+@OCamlStdlibDir@/gen/*.ml
+@OCamlStdlibDir@/gen/*.mli
+@OCamlStdlibDir@/gen/*.cmi
+@OCamlStdlibDir@/gen/*.cmt
+@OCamlStdlibDir@/gen/*.cmti
+OPT: @OCamlStdlibDir@/gen/*.a
+OPT: @OCamlStdlibDir@/gen/*.cmxa
+OPT: @OCamlStdlibDir@/gen/*.cmx

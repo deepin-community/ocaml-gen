@@ -1,0 +1,2 @@
+version=4
+https://github.com/c-cube/gen/releases .*/v?([\d\.]+)\.tar\.gz
