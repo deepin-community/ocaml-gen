@@ -1,0 +1,7 @@
+/tmp/
+/libgen-ocaml-dev.install
+/libgen-ocaml-dev/
+/*.debhelper
+/files
+/*.substvars
+/debhelper-build-stamp
